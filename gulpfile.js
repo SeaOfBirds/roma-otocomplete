@@ -69,7 +69,7 @@ gulp.task("coveralls", ["test"], () => {
 });
 
 gulp.task("babel", ["clean"], () =>
-  gulp.src("lib\**\*.js")
+  gulp.src("lib/roma-otocomplete.js")
     .pipe(babel())
     .pipe(gulp.dest("dist"))
 );

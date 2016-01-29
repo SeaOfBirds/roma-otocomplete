@@ -1,17 +1,17 @@
 {
   "name": "roma-otocomplete",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "An autocomplete provider library",
   "homepage": "",
   "author": {
-    "name": "SeaOfBirds",
+    "name": "seaofbirds",
     "email": "blueseaofbirds@gmail.com",
     "url": ""
   },
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
+  "main": "dist/roma-otocomplete.js",
   "keywords": [
     "japanese",
     "romaji",
