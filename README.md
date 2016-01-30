@@ -1,5 +1,5 @@
 # roma-otocomplete [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> 
+> An autocomplete provider library for javascript.
 
 ## Installation
 
@@ -11,9 +11,45 @@ $ npm install --save roma-otocomplete
 
 ```js
 var romaOtocomplete = require('roma-otocomplete');
-
-romaOtocomplete('Rainbow');
 ```
+
+see [test/roma-otocomplete.js](https://github.com/SeaOfBirds/roma-otocomplete/blob/master/test/roma-otocomplete.js)
+
+
+## Methods
+
+### romaOtocomplete.hiraganaToRomaji(kanaText)
+Returns the romanized string for the given hiragana text.
+```js
+RomaOtocomplete.hiraganaToRomaji("ふじさん") === "fujisan";  // true
+```
+
+### romaOtocomplete.hiraganaToRomajiText(kanaText)
+Returns the RomajiText object for the given hiragana text.
+```js
+var romajiText = RomaOtocomplete.hiraganaToRomajiText("ぐらーふ・つぇっぺりん");
+
+romajiText.toString() === "gura-futsuepperin");  // true
+```
+
+### romaOtocomplete.testQuery(query, kanaText)
+Returns RomajiText if all query characters got matches with them, otherwise null.
+```js
+RomaOtocomplete.testQuery("choukai", "ちょうかい");  // RomajiText
+RomaOtocomplete.testQuery("tyokai", "ちょうかい");  // RomajiText
+RomaOtocomplete.testQuery("cho-kai", "ちょうかい");  // RomajiText
+RomaOtocomplete.testQuery("tyookai", "ちょうかい");  // RomajiText
+RomaOtocomplete.testQuery("maya", "ちょうかい");  // null
+```
+
+### romaOtocomplete.getSuggestions(query, array, [romajiTextFunctor])
+Get suggested texts for the given query.
+```js
+var list = ["りゅうじょう", "りゅうほう", "しょうほう", "しょうかく", "たいほう"];
+RomaOtocomplete.getSuggestions("ryu", list);
+```
+
+
 ## License
 
 MIT © [Spitice]()
