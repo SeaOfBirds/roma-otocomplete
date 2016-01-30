@@ -28,7 +28,7 @@ describe("Hiragana to Romaji", () => {
 
   describe("Hiragana text with 促音(っ)", () => {
     it("has sokuon.", () => {
-      assert.equal(RomaOtocomplete.hiraganaToRomaji("つぇっぺりん"), "tsuxepperin");
+      assert.equal(RomaOtocomplete.hiraganaToRomaji("つぇっぺりん"), "tsuepperin");
     });
   });
 });
@@ -118,8 +118,8 @@ describe("Delimiters", () => {
   it("should have two segments", () => {
     const romajiText = RomaOtocomplete.hiraganaToRomajiText("ぐらーふ・つぇっぺりん");
     assert.ok(romajiText.child);
-    assert.equal(romajiText.toString(), "gura-futsuxepperin");
-    assert.equal(romajiText.child.toString(), "tsuxepperin");
+    assert.equal(romajiText.toString(), "gura-futsuepperin");
+    assert.equal(romajiText.child.toString(), "tsuepperin");
   });
 
   it("should be qualified", () => {
